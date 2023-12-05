@@ -1,0 +1,23 @@
+mat-card{
+  background-color: #efefef;
+  margin: 2em;
+  width: fit-content;
+  height: fit-content;
+  padding: 2em;
+  align-items: center;
+}
+
+mat-card-title{
+  color: #1e1e1e;
+  margin-bottom: 1em;
+}
+
+label{
+  font-size: larger;
+}
+
+span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

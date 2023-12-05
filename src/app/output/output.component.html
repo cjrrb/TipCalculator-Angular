@@ -1,0 +1,20 @@
+<span>
+  <mat-card>
+    <mat-card-title>{{title}}</mat-card-title>
+    <p>
+      <label class="output-label">Cost of Service: </label>
+      <span class="output-value">${{order.costOfService}}</span>
+    </p>
+    <p>
+      <label class="output-label">Tip Amount: </label>
+      <span class="output-value">{{calculateTipAmount() | currency}}</span>
+    </p>
+    <p>
+      <label class="output-label">Total Cost: </label>
+      <span class="output-value">{{order.costOfService + calculateTipAmount() | currency}}</span>
+    </p>
+    <p>
+      <button mat-raised-button routerLink="input">Go Back</button>
+    </p>
+  </mat-card>
+</span>

@@ -1,0 +1,31 @@
+<span>
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <form [formGroup]="form" (ngSubmit)="send(form.value)">
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Cost of Service</mat-label>
+        <input matInput formControlName="costOfService" pattern="^\d*\.?\d+$">
+        <mat-error *ngIf="!form.get('costOfService')?.valid && form.get('costOfService')?.touched">
+          Please enter a valid number
+        </mat-error>
+      </mat-form-field>
+    </p>
+    <p>
+      <label>Quality of Service / Tip Percent</label><br>
+      <mat-radio-group formControlName="tipPercent">
+        <mat-radio-button value="0.15">Okay - 15%</mat-radio-button><br>
+        <mat-radio-button value="0.18">Good - 18%</mat-radio-button><br>
+        <mat-radio-button value="0.20">Excellent - 20%</mat-radio-button>
+      </mat-radio-group>
+    </p>
+    <p>
+      <label>Round Tip?</label>
+      <mat-checkbox value="true" formControlName="roundTip"></mat-checkbox>
+    </p>
+    <p>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </p>
+  </form>
+</mat-card>
+</span>
